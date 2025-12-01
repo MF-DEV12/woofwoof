@@ -11,7 +11,7 @@ Inspired by the [woff](https://github.com/bodoni/woff) crate, but with key diffe
 
 - **Pure Rust brotli**: Uses the [brotli](https://crates.io/crates/brotli) crate instead of linking to C brotli
 - **Windows support**: Compiles on Windows, Linux, and macOS
-- **WOFF2 only**: No WOFF1 support — WOFF2 adoption is now widespread enough that serving WOFF1 is unnecessary
+- **WOFF2 only**: No WOFF1 support — [WOFF2 adoption](https://caniuse.com/?search=woff2) is now widespread enough that serving WOFF1 is unnecessary
 
 This crate wraps Google's [woff2](https://github.com/google/woff2) C++ library for the font-specific table transformations that make WOFF2 compress so well, while using pure Rust for brotli compression.
 
