@@ -2,7 +2,13 @@
 
 WOFF2 font compression and decompression for Rust.
 
-Uses Google's [woff2](https://github.com/google/woff2) C++ library for font-specific transforms, with compression provided by the pure Rust [brotli](https://crates.io/crates/brotli) crate.
+Inspired by the [woff](https://github.com/bodoni/woff) crate, but with key differences:
+
+- **Pure Rust brotli**: Uses the [brotli](https://crates.io/crates/brotli) crate instead of linking to C brotli
+- **Windows support**: Compiles on Windows, Linux, and macOS
+- **WOFF2 only**: No WOFF1 support — WOFF2 adoption is now widespread enough that serving WOFF1 is unnecessary
+
+This crate wraps Google's [woff2](https://github.com/google/woff2) C++ library for the font-specific table transformations that make WOFF2 compress so well, while using pure Rust for brotli compression.
 
 ## Usage
 
@@ -47,7 +53,7 @@ Rust API (compress/decompress)
     C wrapper (extern "C")
          │
          ▼
-    woff2 C++ (font transforms)
+    Google woff2 C++ (font transforms)
          │
          ▼
     Rust brotli shim (#[no_mangle])
@@ -57,6 +63,10 @@ Rust API (compress/decompress)
 ```
 
 The C++ woff2 library handles the complex font table transformations that make WOFF2 compress so well. Instead of linking to C brotli, we provide stub headers and implement the brotli functions in Rust, forwarding to the pure Rust brotli crate.
+
+## Credits
+
+This crate was inspired by [bodoni/woff](https://github.com/bodoni/woff), which pioneered the approach of wrapping Google's woff2 C++ library for Rust.
 
 ## Sponsors
 
@@ -99,4 +109,4 @@ Licensed under either of:
 
 at your option.
 
-The bundled woff2 library is licensed under the MIT license.
+The bundled woff2 C++ library is licensed under the MIT license.
