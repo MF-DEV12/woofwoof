@@ -40,7 +40,7 @@ Compress a TTF/OTF font to WOFF2 format.
 
 Decompress a WOFF2 font back to TTF/OTF format.
 
-## Why "woofwoof"?
+## Why "woofwoof"? 🐕
 
 Because it does WOFF2. Get it? WOFF... woof... woofwoof?
 
