@@ -1,5 +1,10 @@
 # woofwoof
 
+[![crates.io](https://img.shields.io/crates/v/woofwoof.svg)](https://crates.io/crates/woofwoof)
+[![documentation](https://docs.rs/woofwoof/badge.svg)](https://docs.rs/woofwoof)
+[![MIT/Apache-2.0 licensed](https://img.shields.io/crates/l/woofwoof.svg)](./LICENSE-MIT)
+![woof woof](https://img.shields.io/badge/woof-woof-blue)
+
 WOFF2 font compression and decompression for Rust.
 
 Inspired by the [woff](https://github.com/bodoni/woff) crate, but with key differences:
