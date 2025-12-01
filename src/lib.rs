@@ -59,12 +59,7 @@ where
     let metadata_size = metadata.count_bytes();
 
     let size = unsafe {
-        ffi::ComputeTTFToWOFF2Size(
-            data.as_ptr(),
-            data.len(),
-            metadata.as_ptr(),
-            metadata_size,
-        )
+        ffi::ComputeTTFToWOFF2Size(data.as_ptr(), data.len(), metadata.as_ptr(), metadata_size)
     };
 
     let mut buffer = vec![0u8; size];
@@ -107,9 +102,8 @@ pub fn decompress(data: &[u8]) -> Option<Vec<u8>> {
 
     let mut buffer = vec![0u8; size];
 
-    let status = unsafe {
-        ffi::ConvertWOFF2ToTTF(buffer.as_mut_ptr(), size, data.as_ptr(), data.len())
-    };
+    let status =
+        unsafe { ffi::ConvertWOFF2ToTTF(buffer.as_mut_ptr(), size, data.as_ptr(), data.len()) };
 
     if status == 0 {
         return None;

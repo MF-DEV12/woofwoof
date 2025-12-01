@@ -8,5 +8,8 @@ fn main() {
 
     let roundtripped = woofwoof::decompress(&woff2).unwrap();
     std::fs::write("tests/Roboto-roundtripped.ttf", &roundtripped).unwrap();
-    println!("Wrote tests/Roboto-roundtripped.ttf ({} bytes)", roundtripped.len());
+    println!(
+        "Wrote tests/Roboto-roundtripped.ttf ({} bytes)",
+        roundtripped.len()
+    );
 }

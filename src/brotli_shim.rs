@@ -3,10 +3,10 @@
 use std::ffi::c_int;
 use std::slice;
 
-use brotli::enc::backward_references::BrotliEncoderMode;
-use brotli::enc::BrotliEncoderParams;
 use brotli::BrotliCompress;
 use brotli::BrotliDecompress;
+use brotli::enc::BrotliEncoderParams;
+use brotli::enc::backward_references::BrotliEncoderMode;
 
 // Constants matching brotli C API
 pub const BROTLI_TRUE: c_int = 1;
