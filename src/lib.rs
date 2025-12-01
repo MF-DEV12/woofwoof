@@ -20,13 +20,13 @@
 mod brotli_shim;
 
 mod ffi {
-    use std::ffi::c_int;
+    use std::ffi::{c_char, c_int};
 
     unsafe extern "C" {
         pub fn ComputeTTFToWOFF2Size(
             data: *const u8,
             length: usize,
-            extended_metadata: *const i8,
+            extended_metadata: *const c_char,
             extended_metadata_length: usize,
         ) -> usize;
 
@@ -37,7 +37,7 @@ mod ffi {
             length: usize,
             result: *mut u8,
             result_length: *mut usize,
-            extended_metadata: *const i8,
+            extended_metadata: *const c_char,
             extended_metadata_length: usize,
             brotli_quality: c_int,
             allow_transforms: c_int,
